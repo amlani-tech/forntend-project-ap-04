@@ -1,0 +1,460 @@
+<!-- HEADER -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #b1e3f5;
+  color: #003f5c;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.dark {
+  background: #121212;
+  color: #ddd;
+}
+header {
+  background: linear-gradient(90deg, #005f7f, #003f5c);
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+.logo img { height: 60px; transition: transform 0.3s ease; }
+.logo img:hover { transform: scale(1.05); }
+nav { display: flex; align-items: center; gap: 15px; }
+nav > a, .dropdown > a {
+  color: #fff; text-decoration: none; padding: 8px 12px; font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+nav > a:hover, .dropdown > a:hover {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+.dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute; top:100%; left:0;
+  background: #005f73;
+  min-width: 180px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropdown:hover > .dropdown-menu {
+  opacity: 1; transform: translateY(0); pointer-events: auto;
+}
+.dropdown-menu a {
+  color: #fff; padding: 10px 15px; text-decoration: none; font-size: 14px;
+  display: block;
+}
+.dropdown-menu a:hover { background: rgba(255,255,255,0.1); }
+
+.toggle, .audio-toggle {
+  cursor: pointer;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+.toggle:hover, .audio-toggle:hover { color: #ffd166; }
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social a {
+  color: #fff; font-size: 1.2em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.social a:hover {
+  color: #ffd166; transform: translateY(-2px);
+}
+
+footer {
+  background:#003f5c; color:#fff; padding:30px 20px; margin-top:50px;
+}
+.footer-container {
+  max-width:1200px; margin:auto; display:flex; flex-wrap:wrap;
+  gap:40px; justify-content:space-between;
+}
+.footer-container img {
+  width:80px; border-radius:5px;
+}
+.footer-container p {
+  margin-top:10px; max-width:250px;
+}
+.footer-container h4 {
+  color:#ffd166; margin-bottom:10px;
+}
+.footer-container ul {
+  list-style:none; padding:0; font-size:14px;
+}
+.footer-container ul li {
+  margin-bottom:5px;
+}
+.footer-container ul li a {
+  color:#fff; text-decoration:none;
+}
+.footer-container ul li a:hover {
+  text-decoration:underline;
+}
+.footer-container .social-icons a {
+  color:#fff; font-size:1.2em; margin-right:10px;
+}
+.footer-bottom {
+  text-align:center; font-size:13px; margin-top:20px;
+  border-top:1px solid #555; padding-top:10px;
+}
+</style>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="Marine Life Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="games.html">Games</a>
+      <a href="adventures.html">Adventures</a>
+      <a href="booking.html">Booking</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">More <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="en.html">Encyclopedia</a>
+          <div class="dropdown">
+            <a href="gallery.html" class="dropdown-toggle">Gallery <i class="fas fa-caret-right"></i></a>
+            <div class="dropdown-menu">
+              
+              <a href="#">Ocean Depths</a>
+            </div>
+          </div>
+          <a href="#">404 Page</a>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <span class="toggle" id="toggleMode">🌙 Dark Mode</span>
+      <span class="audio-toggle" id="toggleAudio">🔈 Mute Audio</span>
+      <div class="social">
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://google.com" target="_blank"><i class="fab fa-google"></i></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<audio id="bgAudio" autoplay loop>
+  <source src="assets/tunebase.mp4" type="audio/mpeg">
+</audio>
+<main>
+  <!-- 🌊 Video Banner -->
+  <section class="video-banner">
+    <video autoplay muted loop>
+      <source src="assets/OCEAN LOOP.mp4" type="video/mp4" />
+    </video>
+    <div class="banner-text">
+      <h1>Marine Water Adventures</h1>
+      <p>Dive, surf, sail & explore the ocean like never before!</p>
+    </div>
+  </section>
+
+  <!-- 🤿 Scuba Diving -->
+  <section class="adventure-section ripple">
+    <div class="container adventure">
+      <div class="text fade-in-left">
+        <h2>🤿 Scuba Diving</h2>
+        <p>
+          Dive into the crystal-clear waters and explore vibrant coral reefs and marine life up close. Perfect for thrill-seekers and ocean lovers.
+        </p>
+        <a href="booking.html" class="btn">Book Now</a>
+      </div>
+      <div class="image fade-in-right">
+        <img src="assets/sc.jpg" alt="Scuba Diving">
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider"></div>
+
+  <!-- 🏄‍♂️ Surfing -->
+  <section class="adventure-section ripple">
+    <div class="container adventure reverse">
+      <div class="image fade-in-left">
+        <img src="assets/sur.jpg" alt="Surfing">
+      </div>
+      <div class="text fade-in-right">
+        <h2>🏄‍♂️ Surfing</h2>
+        <p>
+          Ride the waves on some of the most breathtaking beaches. From beginner-friendly shores to big waves for pros — there’s something for everyone.
+        </p>
+        <a href="booking.html" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider flip"></div>
+
+  <!-- 🚤 Kayaking -->
+  <section class="adventure-section ripple">
+    <div class="container adventure">
+      <div class="text fade-in-left">
+        <h2>🚤 Kayaking</h2>
+        <p>
+          Paddle your way through calm lagoons, mangroves, and scenic coastlines. A serene yet adventurous experience.
+        </p>
+        <a href="booking.html" class="btn">Explore Routes</a>
+      </div>
+      <div class="image fade-in-right">
+        <img src="assets/kayking.jpg" alt="Kayaking">
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider"></div>
+
+  <!-- 🪂 Parasailing -->
+  <section class="adventure-section ripple">
+    <div class="container adventure reverse">
+      <div class="image fade-in-left">
+        <img src="assets/parasail-06.webp" alt="Parasailing">
+      </div>
+      <div class="text fade-in-right">
+        <h2>🪂 Parasailing</h2>
+        <p>
+          Fly high above the ocean and take in panoramic views while feeling the cool sea breeze. A perfect blend of adrenaline and beauty.
+        </p>
+        <a href="booking.html" class="btn">Try It</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider flip"></div>
+
+  <!-- 👣 Underwater Walking -->
+  <section class="adventure-section ripple">
+    <div class="container adventure">
+      <div class="text fade-in-left">
+        <h2>👣 Underwater Walking</h2>
+        <p>
+          Walk along the ocean floor and get up-close with the marine world without even knowing how to swim. Safe and unforgettable!
+        </p>
+        <a href="booking.html" class="btn">Book Experience</a>
+      </div>
+      <div class="image fade-in-right">
+        <img src="assets/uu.jpg" alt="Underwater Walking">
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+main {
+  margin-top: 82px;
+}
+.video-banner {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+}
+.video-banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+.video-banner .banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+.video-banner .banner-text h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.video-banner .banner-text p {
+  font-size: 1.2em;
+}
+.adventure-section {
+  padding: 60px 20px;
+}
+.adventure {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.adventure.reverse {
+  flex-direction: row-reverse;
+}
+.adventure .text {
+  flex: 1 1 50%;
+}
+.adventure .text h2 {
+  font-size: 2em;
+  color: #005f7f;
+  margin-bottom: 15px;
+}
+.adventure .text p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  color: #333;
+}
+.adventure .text .btn {
+  display: inline-block;
+  background: #005f7f;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.adventure .text .btn:hover {
+  background: #003f5c;
+}
+.adventure .image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+.adventure .image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease;
+}
+.fade-in-left.animate,
+.fade-in-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+.adventure-section.ripple {
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.8), rgba(240,248,251,0.9));
+  position: relative;
+  z-index: 1;
+}
+.ripple::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 70%);
+  background-size: 200% 200%;
+  animation: ripple 6s infinite linear;
+  z-index: -1;
+  opacity: 0.3;
+}
+@keyframes ripple {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+.wave-divider {
+  background: url('assets/wave.svg') repeat-x;
+  height: 50px;
+  background-size: contain;
+  margin: -20px 0;
+}
+.wave-divider.flip {
+  transform: scaleY(-1);
+}
+@media(max-width: 768px) {
+  .adventure {
+    flex-direction: column;
+  }
+  .adventure.reverse {
+    flex-direction: column;
+  }
+}
+</style>
+
+<script>
+// Fade-in animations when sections are in view
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+<footer>
+  <div class="footer-container">
+    <div>
+      <img src="assets/logo.jpg" alt="Marine Life Logo">
+      <p>Explore the wonders of the ocean — your adventure begins here!</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://google.com" target="_blank"><i class="fab fa-google"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Marine Life. Designed with ❤️ by <strong>Ap@04</strong>.
+  </div>
+</footer>
+
+<script>
+// 🌙 Dark Mode Toggle
+document.getElementById('toggleMode').addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const modeText = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  document.getElementById('toggleMode').textContent = modeText;
+});
+
+// 🔈 Audio Mute/Unmute Toggle
+const bgAudio = document.getElementById('bgAudio');
+document.getElementById('toggleAudio').addEventListener('click', () => {
+  bgAudio.muted = !bgAudio.muted;
+  const audioText = bgAudio.muted ? '🔇 Unmute Audio' : '🔈 Mute Audio';
+  document.getElementById('toggleAudio').textContent = audioText;
+});
+</script>

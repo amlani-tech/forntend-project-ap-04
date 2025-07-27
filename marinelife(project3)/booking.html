@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marine Life Adventures</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f0f8fb;
+  color: #003f5c;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.dark {
+  background: #121212;
+  color: #ddd;
+}
+header {
+  background: linear-gradient(90deg, #005f7f, #003f5c);
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+.logo img { height: 60px; transition: transform 0.3s ease; }
+.logo img:hover { transform: scale(1.05); }
+nav { display: flex; align-items: center; gap: 15px; }
+nav > a, .dropdown > a {
+  color: #fff; text-decoration: none; padding: 8px 12px; font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+nav > a:hover, .dropdown > a:hover {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+.dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute; top:100%; left:0;
+  background: #005f73;
+  min-width: 180px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropdown:hover > .dropdown-menu {
+  opacity: 1; transform: translateY(0); pointer-events: auto;
+}
+.dropdown-menu .dropdown {
+  position: relative;
+}
+.dropdown-menu .dropdown-menu {
+  top: 0; left: 100%; margin-left: 1px;
+}
+.dropdown-menu a {
+  color: #fff; padding: 10px 15px; text-decoration: none; font-size: 14px;
+  display: block;
+}
+.dropdown-menu a:hover { background: rgba(255,255,255,0.1); }
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.toggle, .audio-toggle {
+  cursor: pointer;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+.toggle:hover, .audio-toggle:hover { color: #ffd166; }
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social a {
+  color: #fff; font-size: 1.2em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.social a:hover {
+  color: #ffd166; transform: translateY(-2px);
+}
+footer {
+  background-color: #003f5c;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-container img {
+  width: 80px;
+  border-radius: 5px;
+}
+
+.footer-container p {
+  margin-top: 10px;
+  max-width: 250px;
+}
+
+.footer-container h4 {
+  color: #ffd166;
+  margin-bottom: 10px;
+}
+
+.footer-container ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.footer-container ul li {
+  margin-bottom: 5px;
+}
+
+.footer-container ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-container ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-container .social-icons a {
+  color: #fff;
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 20px;
+  border-top: 1px solid #555;
+  padding-top: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="Marine Life Logo">
+    </div>
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="games.html">Games</a>
+  <a href="adventures.html">Adventures</a>
+  <a href="booking.html">Booking</a>
+  <div class="dropdown">
+    <a href="#" class="dropdown-toggle">More <i class="fas fa-caret-down"></i></a>
+    <div class="dropdown-menu">
+      <a href="en.html">Encyclopedia</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">Gallery <i class="fas fa-caret-right"></i></a>
+        <div class="dropdown-menu">
+          <a href="gallery.html">Ocean Depths</a>
+        </div>
+      </div>
+      <a href="#">404 Page</a>
+    </div>
+  </div>
+</nav>
+
+    <div>
+      <span class="toggle" id="toggleMode">🌙 Dark Mode</span>
+      <span class="audio-toggle" id="toggleAudio">🔈 Mute Audio</span>
+      <div class="social">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <script>
+document.querySelectorAll('.dropdown-menu .dropdown-toggle').forEach(item => {
+  item.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    let nextMenu = this.nextElementSibling;
+    if(nextMenu) {
+      nextMenu.classList.toggle('show');
+    }
+  });
+});
+</script>
+
+<style>
+.dropdown-menu .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+}
+
+.dropdown-menu .dropdown-menu.show {
+  display: block;
+}
+</style>
+
+</header>
+<audio id="bgAudio" autoplay loop>
+  <source src="assets/tunebase.mp4" type="audio/mpeg">
+</audio>
+
+<video autoplay muted loop id="bgVideo" class="position-fixed w-100 h-100" style="object-fit: cover; z-index: -1;">
+  <source src="assets/OCEAN LOOP.mp4" type="video/mp4">
+</video>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <button class="btn btn-primary btn-lg shadow-lg" data-bs-toggle="modal" data-bs-target="#bookingModal">
+    🌊 Book Your Marine Adventure
+  </button>
+</div>
+
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="bookingModalLabel">Book Your Adventure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="bookingForm" class="row g-3">
+
+          <div class="col-md-6">
+            <label class="form-label">Select Sea</label>
+            <select id="sea" class="form-select" required>
+              <option value="">-- Select a Sea --</option>
+              <option value="Arabian Sea">Arabian Sea</option>
+              <option value="Bay of Bengal">Bay of Bengal</option>
+              <option value="Indian Ocean">Indian Ocean</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Select City</label>
+            <select id="city" class="form-select" required></select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Select Beach</label>
+            <select id="beach" class="form-select" required></select>
+            <div id="mapLink" class="mt-1"></div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Adventure Type</label>
+            <select id="adventure" class="form-select" required>
+              <option value="">-- Select Adventure --</option>
+              <option>Snorkeling</option>
+              <option>Scuba Diving</option>
+              <option>Dolphin Watching</option>
+              <option>Deep Sea Fishing</option>
+              <option>Coral Reef Exploration</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Sea Ride</label>
+            <select id="ride" class="form-select" required>
+              <option value="">-- Select Ride --</option>
+              <option>Banana Boat</option>
+              <option>Jet Ski</option>
+              <option>Parasailing</option>
+              <option>Glass-bottom Boat</option>
+              <option>Kayaking</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Date</label>
+            <input type="date" id="date" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Time</label>
+            <input type="time" id="time" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">No. of Persons</label>
+            <input type="number" id="persons" class="form-control" value="1" min="1" max="20" required>
+          </div>
+
+          <div class="col-12 text-center mt-3">
+            <h6>💰 Price Breakdown</h6>
+            <p>Adventure: ₹<span id="advPrice">0</span> + Ride: ₹<span id="ridePrice">0</span> × Persons = <strong>₹<span id="totalPrice">0</span></strong></p>
+          </div>
+
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success btn-lg">🚤 Confirm Booking</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="toastSuccess" class="toast bg-success text-white" role="alert" data-bs-delay="3000">
+    <div class="toast-body">
+      ✅ Your booking is confirmed! We'll contact you soon.
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+
+
+const cityData = {
+  "Arabian Sea": ["Mumbai", "Goa", "Kochi"],
+  "Bay of Bengal": ["Chennai", "Visakhapatnam", "Puri"],
+  "Indian Ocean": ["Kanyakumari", "Rameswaram"]
+};
+
+const beachData = {
+  "Mumbai": ["Juhu Beach", "Girgaum Chowpatty"],
+  "Goa": ["Baga Beach", "Calangute Beach"],
+  "Chennai": ["Marina Beach", "Elliot’s Beach"],
+  "Visakhapatnam": ["RK Beach", "Yarada Beach"],
+  "Puri": ["Puri Beach", "Chandrabhaga Beach"]
+};
+
+const mapLinks = {};
+Object.keys(beachData).forEach(city => {
+  beachData[city].forEach(beach => {
+    mapLinks[beach] = `https://maps.google.com/?q=${encodeURIComponent(beach)}`;
+  });
+});
+
+const basePrices = {
+  "Snorkeling": 1500,
+  "Scuba Diving": 3500,
+  "Dolphin Watching": 2000,
+  "Deep Sea Fishing": 3000,
+  "Coral Reef Exploration": 2500
+};
+
+const ridePrices = {
+  "Banana Boat": 500,
+  "Jet Ski": 1000,
+  "Parasailing": 1500,
+  "Glass-bottom Boat": 800,
+  "Kayaking": 600
+};
+
+const sea = document.getElementById('sea');
+const city = document.getElementById('city');
+const beach = document.getElementById('beach');
+const adventure = document.getElementById('adventure');
+const ride = document.getElementById('ride');
+const persons = document.getElementById('persons');
+const advPrice = document.getElementById('advPrice');
+const ridePrice = document.getElementById('ridePrice');
+const totalPrice = document.getElementById('totalPrice');
+const mapLink = document.getElementById('mapLink');
+const bookingForm = document.getElementById('bookingForm');
+const toastSuccess = document.getElementById('toastSuccess');
+
+function updatePrice() {
+  const advP = basePrices[adventure.value] || 0;
+  const rideP = ridePrices[ride.value] || 0;
+  const personsVal = +persons.value || 1;
+  advPrice.textContent = advP;
+  ridePrice.textContent = rideP;
+  totalPrice.textContent = (advP + rideP) * personsVal;
+}
+
+sea.addEventListener("change", () => {
+  city.innerHTML = `<option value="">-- Select a City --</option>`;
+  (cityData[sea.value] || []).forEach(c => city.innerHTML += `<option>${c}</option>`);
+  beach.innerHTML = `<option value="">-- Select a Beach --</option>`;
+  mapLink.innerHTML = ``;
+});
+
+city.addEventListener("change", () => {
+  beach.innerHTML = `<option value="">-- Select a Beach --</option>`;
+  (beachData[city.value] || []).forEach(b => beach.innerHTML += `<option>${b}</option>`);
+  mapLink.innerHTML = ``;
+});
+
+beach.addEventListener("change", () => {
+  const link = mapLinks[beach.value];
+  mapLink.innerHTML = link ? `<a href="${link}" target="_blank" class="link-primary">📍 View on Map</a>` : ``;
+});
+
+adventure.addEventListener("change", updatePrice);
+ride.addEventListener("change", updatePrice);
+persons.addEventListener("input", updatePrice);
+
+bookingForm.addEventListener("submit", e => {
+  e.preventDefault();
+  new bootstrap.Toast(toastSuccess).show();
+  bookingForm.reset();
+  advPrice.textContent = ridePrice.textContent = totalPrice.textContent = "0";
+  mapLink.innerHTML = ``;
+  city.innerHTML = `<option value="">-- Select a City --</option>`;
+  beach.innerHTML = `<option value="">-- Select a Beach --</option>`;
+});
+
+document.getElementById('toggleMode').addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const modeText = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  document.getElementById('toggleMode').textContent = modeText;
+});
+
+const bgAudio = document.getElementById('bgAudio');
+document.getElementById('toggleAudio').addEventListener('click', () => {
+  bgAudio.muted = !bgAudio.muted;
+  const audioText = bgAudio.muted ? '🔇 Unmute Audio' : '🔈 Mute Audio';
+  document.getElementById('toggleAudio').textContent = audioText;
+});
+</script>
+
+
+<footer>
+  <div class="footer-container">
+    <div>
+      <img src="assets/logo.jpg" alt="Marine Life Logo">
+      <p>Explore the wonders of the ocean — your adventure begins here!</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Marine Life. Designed with ❤️ by <strong>Ap@04</strong>.
+  </div>
+</footer>
+
+
+</body>
+</html>
