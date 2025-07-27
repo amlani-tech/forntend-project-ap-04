@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weapons Detailment System - DRDO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --military-green: #3e4e2c;
+      --navy-blue: #1b263b;
+      --airforce-gray: #6c757d;
+      --accent-red: #e63946;
+      --light-bg: #f8f9fa;
+      --dark-text: #212529;
+      --light-text: #f1f1f1;
+      --highlight: #aacc00;
+      --steel-blue: #4682b4;
+      --primary: #1e40af;
+      --secondary: #60a5fa;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+    }
+
+    header, footer {
+      background: linear-gradient(135deg, var(--navy-blue), var(--military-green));
+      color: var(--light-text);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .bottom-header a {
+      color: var(--light-text);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .bottom-header a:hover {
+      color: var(--accent-red);
+    }
+
+    .hero {
+  position: relative;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0fb54;
+  text-align: center;
+  overflow: hidden;
+  background-color: #000; /* fallback color */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('assets/images/ab.jpg') no-repeat center center / cover;
+  filter: blur(4px);
+  transform: scale(1.05); /* prevents edges from cutting */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .content {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .content h2 {
+      color: var(--primary);
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .card {
+      flex: 1 1 300px;
+      background: #e3e8ed;
+      border-left: 5px solid var(--highlight);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      color: var(--primary);
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .bottom-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Weapons Detailment System</h2>
+    <div class="bottom-header">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="we.html"><i class="fas fa-crosshairs"></i> Weapons</a>
+      <a href="em.html"><i class="fas fa-users"></i> PXE Employees</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+  </header>
+
+ <section class="hero">
+  <div class="hero-content">
+    <h1>Weapons Detailment System</h1>
+    <p>Empowering National Defense with Technology</p>
+  </div>
+</section>
+
+  <section class="content">
+    <h2>About DRDO</h2>
+    <p>
+      The Defence Research and Development Organisation (DRDO) is the premier R&D organization under the Ministry of Defence, Government of India. It is responsible for developing cutting-edge defense technologies including missiles, combat vehicles, radars, electronics, and more. With over 50 laboratories across India, DRDO empowers the nation's armed forces with indigenous solutions for land, air, sea, and space.
+    </p>
+
+    <h2>About PXE, Balasore</h2>
+    <p>
+      The Proof and Experimental Establishment (PXE), located in Balasore, Odisha, is a critical laboratory of DRDO. PXE specializes in testing and evaluating armament stores such as artillery shells, bombs, rockets, and aerial delivery systems. It plays a vital role in verifying the performance, accuracy, and safety of weapons before they are inducted into service.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3><i class="fas fa-shield-alt"></i> Indian Army</h3>
+        <p>Land-based systems such as tanks, rifles, and rocket launchers. DRDO provides advanced protection and firepower capabilities.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-anchor"></i> Indian Navy</h3>
+        <p>Sea-based weapons including torpedoes, sonar systems, and shipboard missiles, tested for combat and resilience.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-fighter-jet"></i> Indian Airforce</h3>
+        <p>High-speed aerial systems including missiles, radars, avionics, and smart bombs tailored for air dominance.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy;  All Rights Reserved Ap@04</p>
+  </footer>
+
+</body>
+</html>

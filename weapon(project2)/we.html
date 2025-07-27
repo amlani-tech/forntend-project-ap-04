@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weapons Inventory | Weapons Detailment System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+    }
+    main {
+      padding: 2rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #0d2f59;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+      vertical-align: middle;
+    }
+    thead {
+      background-color: #dce6f1;
+    }
+    tr:hover {
+      background-color: #f0f8ff;
+    }
+    img.weapon-img {
+      width: 100px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    footer {
+      background-color: #0d2f59;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="upper-header">
+    <div>
+      <a href="https://www.google.com" target="_blank"><i class="fas fa-search"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="middle-header">Weapons Detailment System</div>
+  <div class="bottom-header">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="we.html" class="active"><i class="fas fa-crosshairs"></i> Weapons</a>
+    <a href="em.html"><i class="fas fa-users"></i> PXE Employees</a>
+    <a href="d.html"><i class="fas fa-box"></i> Detailment</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+  </div>
+</header>
+
+<main>
+  <h2>Weapons Inventory and Technical Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Weapon Name</th>
+        <th>Category</th>
+        <th>Origin</th>
+        <th>Caliber / Type</th>
+        <th>Effective Range</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Original weapons -->
+      <tr>
+        <td><img src="assets/images/m-46.jpg" alt="M-46 Field Gun" class="weapon-img"></td>
+        <td>M-46 Field Gun</td>
+        <td>Artillery</td>
+        <td>Russia</td>
+        <td>130mm</td>
+        <td>27 km</td>
+        <td>Widely used in field artillery roles</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/so.jpg" alt="Soltam Gun" class="weapon-img"></td>
+        <td>Soltam Gun</td>
+        <td>Artillery</td>
+        <td>Israel</td>
+        <td>155mm</td>
+        <td>39 km</td>
+        <td>Upgraded with Indian digital systems</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/bo.jpg" alt="Bofors FH-77" class="weapon-img"></td>
+        <td>Bofors FH-77</td>
+        <td>Howitzer</td>
+        <td>Sweden</td>
+        <td>155mm</td>
+        <td>24-30 km</td>
+        <td>Famous for Kargil War</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/ATAGS.jpg" alt="ATAGS" class="weapon-img"></td>
+        <td>ATAGS</td>
+        <td>Howitzer</td>
+        <td>India</td>
+        <td>155mm</td>
+        <td>48 km</td>
+        <td>Indigenous and modern</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/t.jpg" alt="T-72 Ajeya" class="weapon-img"></td>
+        <td>T-72 Ajeya</td>
+        <td>Main Battle Tank</td>
+        <td>Russia</td>
+        <td>125mm smoothbore</td>
+        <td>2.5-3 km</td>
+        <td>Extensively upgraded in India</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/mbt.jpg" alt="MBT Arjun" class="weapon-img"></td>
+        <td>MBT Arjun</td>
+        <td>Main Battle Tank</td>
+        <td>India</td>
+        <td>120mm rifled</td>
+        <td>3-4 km</td>
+        <td>Heavy armor and advanced fire control</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/Pinaka.avif" alt="PINAKA" class="weapon-img"></td>
+        <td>PINAKA MLRS</td>
+        <td>Rocket System</td>
+        <td>India</td>
+        <td>214mm rockets</td>
+        <td>40-75 km</td>
+        <td>Multi-barrel rocket launcher system</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/br.jpg" alt="BrahMos" class="weapon-img"></td>
+        <td>BrahMos</td>
+        <td>Cruise Missile</td>
+        <td>India-Russia</td>
+        <td>Supersonic</td>
+        <td>300-450 km</td>
+        <td>World’s fastest cruise missile</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/ak.jpg" alt="AK-203" class="weapon-img"></td>
+        <td>AK-203</td>
+        <td>Assault Rifle</td>
+        <td>Russia (Made in India)</td>
+        <td>7.62x39mm</td>
+        <td>400 m</td>
+        <td>Replacing INSAS rifles</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/in.jpg" alt="INSAS" class="weapon-img"></td>
+        <td>INSAS Rifle</td>
+        <td>Infantry Rifle</td>
+        <td>India</td>
+        <td>5.56x45mm</td>
+        <td>400-450 m</td>
+        <td>Standard Indian Army rifle</td>
+      </tr>
+
+      <!-- Newly added advanced weapons -->
+      <tr>
+        <td><img src="assets/images/ng.jpg" alt="Nag Missile" class="weapon-img"></td>
+        <td>Nag ATGM</td>
+        <td>Anti-Tank Guided Missile</td>
+        <td>India</td>
+        <td>Lock-on-before-launch</td>
+        <td>4-7 km</td>
+        <td>Fire-and-forget missile developed by DRDO</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/netra.jpg" alt="Netra UAV" class="weapon-img"></td>
+        <td>Netra UAV</td>
+        <td>Unmanned Aerial Vehicle</td>
+        <td>India</td>
+        <td>Quadcopter Surveillance</td>
+        <td>2-4 km</td>
+        <td>Used for urban surveillance and crowd monitoring</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/agni.jpg" alt="Agni-V" class="weapon-img"></td>
+        <td>Agni-V</td>
+        <td>ICBM</td>
+        <td>India</td>
+        <td>Solid-fuel, Three Stage</td>
+        <td>5,000 - 8,000 km</td>
+        <td>Strategic deterrent with MIRV capability</td>
+      </tr>
+      <tr>
+        <td><img src="assets/images/dh.jpg" alt="Dhanush Howitzer" class="weapon-img"></td>
+        <td>Dhanush</td>
+        <td>Howitzer</td>
+        <td>India</td>
+        <td>155mm / 45 Cal</td>
+        <td>38-42 km</td>
+        <td>Upgraded version of Bofors FH-77</td>
+      </tr>
+      
+      <tr>
+        <td><img src="assets/images/aka.jpg" alt="Akash SAM" class="weapon-img"></td>
+        <td>Akash SAM</td>
+        <td>Surface-to-Air Missile</td>
+        <td>India</td>
+        <td>Missile with command guidance</td>
+        <td>25-30 km</td>
+        <td>All-weather air defense weapon</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<footer>
+  <p>&copy;  All Rights Reserved Ap@04</p>
+</footer>
+
+</body>
+</html>

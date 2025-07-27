@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weapons Detailment System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="upper-header">
+      <div>
+        <a href="https://www.google.com" target="_blank"><i class="fas fa-search"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+    </div>
+    <div class="middle-header">Weapons Detailment System</div>
+    <div class="bottom-header">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="we.html"><i class="fas fa-crosshairs"></i> Weapons</a>
+      <a href="em.html"><i class="fas fa-users"></i> PXE Employees</a>
+      <a href="d.html"><i class="fas fa-box"></i> Detailment</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+  </header>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="assets/images/rc.avif" />
+      <img src="assets/images/ra.jpg" />
+      <img src="assets/images/rd.jpg" />
+      <img src="assets/images/rb.jpg" />
+      <img src="assets/images/re.avif" />
+    </div>
+  </div>
+
+  <section class="firing-section">
+    <h2>Firing Points</h2>
+    <div class="firing-slider-wrapper">
+      <div class="side-image left-image">
+        <img src="assets/images/drdo.jpg" alt="Left Design">
+      </div>
+
+      <div class="firing-slider-container">
+        <button class="arrow left" onclick="moveSlide(-1)">&#8592;</button>
+
+        <div class="firing-card active" style="background-image: url('assets/images/f1.jpg');">
+          <div class="desc">
+            <h3>Point Alpha</h3>
+            <p>Located for optimal training and performance testing of handheld arms.</p>
+          </div>
+        </div>
+
+        <div class="firing-card" style="background-image: url('assets/images/f2.jpg');">
+          <div class="desc">
+            <h3>Point Bravo</h3>
+            <p>Designed for long-range ballistic and missile testing.</p>
+          </div>
+        </div>
+
+        <div class="firing-card" style="background-image: url('assets/images/f4.jpg');">
+          <div class="desc">
+            <h3>Point Charlie</h3>
+            <p>Vehicle weapon calibration and simulation training range.</p>
+          </div>
+        </div>
+
+        <button class="arrow right" onclick="moveSlide(1)">&#8594;</button>
+      </div>
+
+      <div class="side-image right-image">
+        <img src="assets/images/rsf.jpg" alt="Right Design">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy;  All Rights Reserved Ap@04.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Show Report | Weapons Detailment System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --base: #3790fc;
+      --hover: #d4af37;
+      --light: #f4f6f2;
+      --medium: #3790fc;
+      --text: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      background-color: var(--base);
+      color: white;
+      text-align: center;
+      padding: 14px 0;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: var(--base);
+    }
+
+    .table-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      overflow-x: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(62, 78, 44, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px 16px;
+      text-align: center;
+    }
+
+    th {
+      background-color: var(--medium);
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .actions {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .actions button {
+      background-color: var(--base);
+      color: white;
+      padding: 10px 16px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .actions button:hover {
+      background-color: var(--hover);
+      color: var(--text);
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin: 8px 0;
+    }
+
+    @media print {
+      .actions, header, footer {
+        display: none;
+      }
+
+      .table-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      table {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Firing Detailment Records</h1>
+  </header>
+
+  <h2><i class="fas fa-list-alt"></i> Saved Records</h2>
+
+  <div class="table-container">
+    <table id="reportTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Employee</th>
+          <th>Weapon</th>
+          <th>Date</th>
+          <th>Firing Point</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="actions">
+    <button onclick="exportToExcel()"><i class="fas fa-file-excel"></i> Export to Excel</button>
+    <button onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+    <button onclick="location.href='d.html'"><i class="fas fa-arrow-left"></i> Back to Form</button>
+  </div>
+
+  <footer>
+    <p>&copy;  All Rights Reserved Ap@04</p>
+  </footer>
+
+  <script>
+    const tableBody = document.querySelector("#reportTable tbody");
+    const reports = JSON.parse(localStorage.getItem("firingReports")) || [];
+
+    const employeeMap = {
+      "banerjee": "Lt. Cdr. P. Banerjee",
+      "mahapatra": "S. Mahapatra",
+      "singh": "R. Singh",
+      "nayak": "D. Nayak",
+      "jain": "K. Jain",
+      "patel": "H. Patel",
+      "das": "A. Das"
+    };
+
+    const firingPointMap = {
+      "fp1": "Firing Point 1",
+      "fp2": "Firing Point 2",
+      "fp3": "Firing Point 3"
+    };
+
+    function renderTable() {
+      tableBody.innerHTML = "";
+
+      if (reports.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="6">No records found.</td></tr>';
+        return;
+      }
+
+      reports.forEach((report, index) => {
+        const row = document.createElement("tr");
+
+        const fullEmployee = employeeMap[report.employee] || report.employee;
+        const fullFiringPoint = firingPointMap[report.firingPoint] || report.firingPoint;
+
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${fullEmployee}</td>
+          <td>${report.weapon}</td>
+          <td>${report.date}</td>
+          <td>${fullFiringPoint}</td>
+          <td>${report.time}</td>
+        `;
+
+        row.addEventListener("click", () => {
+          localStorage.setItem("selectedIndex", index);
+          window.location.href = "d.html";
+        });
+
+        tableBody.appendChild(row);
+      });
+    }
+
+    function exportToExcel() {
+      let csv = "S.No,Employee,Weapon,Date,Firing Point,Time\n";
+      reports.forEach((r, i) => {
+        const emp = employeeMap[r.employee] || r.employee;
+        const point = firingPointMap[r.firingPoint] || r.firingPoint;
+        csv += `${i + 1},"${emp}","${r.weapon}","${r.date}","${point}","${r.time}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: "text/csv" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "firing_report.csv";
+      link.click();
+    }
+
+    renderTable();
+  </script>
+
+</body>
+</html>
+
+

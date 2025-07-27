@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detailment | Weapons Detailment System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --base: #3790fc;
+      --hover: #d4af37;
+      --light: #f4f6f2;
+      --medium: #3790fc;
+      --text: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+    }
+
+    header, footer {
+      background-color: var(--base);
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    .upper-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      background-color: var(--medium);
+      gap: 16px;
+    }
+
+    .upper-header a {
+      color: white;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .upper-header a:hover {
+      color: var(--hover);
+    }
+
+    .middle-header {
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 20px 0;
+      color: var(--hover);
+    }
+
+    .bottom-header {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      background-color: var(--base);
+      padding: 14px 0;
+    }
+
+    .bottom-header a {
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .bottom-header a:hover {
+      color: var(--hover);
+      transform: translateY(-2px);
+    }
+
+    .detailment-form {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(62, 78, 44, 0.1);
+    }
+
+    .detailment-form h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--base);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--base);
+    }
+
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: var(--light);
+      border: none;
+      border-radius: 8px;
+      box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(92, 122, 67, 0.2);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .form-actions button,
+    .form-actions a {
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      color: white;
+    }
+
+    .form-actions .save { background-color: #4e6533; }
+    .form-actions .reset { background-color: #a63d2e; }
+    .form-actions .update { background-color: #d4af37; color: #222; }
+    .form-actions .delete { background-color: #64744d; }
+    .form-actions .report { background-color: #3c4d2a; }
+
+    .form-actions button:hover,
+    .form-actions a:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    footer p {
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+
+    i.fas, i.fab {
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="upper-header">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="middle-header">Weapons Detailment System</div>
+
+    <div class="bottom-header">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="we.html"><i class="fas fa-crosshairs"></i> Weapons</a>
+      <a href="em.html"><i class="fas fa-users"></i> PXE Employees</a>
+      <a href="d.html"><i class="fas fa-box"></i> Detailment</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+  </header>
+
+  <section class="detailment-form">
+    <h2><i class="fas fa-clipboard-list"></i> Firing Detailment Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="employee">Select Employee</label>
+        <select id="employee" required>
+          <option value="">-- Select Employee --</option>
+          <option value="banerjee">Lt. Cdr. P. Banerjee</option>
+          <option value="mahapatra">S. Mahapatra</option>
+          <option value="singh">R. Singh</option>
+          <option value="nayak">D. Nayak</option>
+          <option value="jain">K. Jain</option>
+          <option value="patel">H. Patel</option>
+          <option value="das">A. Das</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="weapon">Select Weapon</label>
+        <select id="weapon" required>
+          <option value="">-- Select Weapon --</option>
+          <option value="m46">M-46 Gun</option>
+          <option value="soltam">Soltam Gun</option>
+          <option value="bofors">Bofors Gun</option>
+          <option value="atags">ATAGS</option>
+          <option value="t72">T-72</option>
+          <option value="mbt">MBT</option>
+          <option value="ifg">IFG</option>
+          <option value="lfg">LFG</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date of Firing</label>
+        <input type="date" id="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="firing-point">Firing Point</label>
+        <select id="firing-point" required>
+          <option value="">-- Select Point --</option>
+          <option value="fp1">Firing Point 1</option>
+          <option value="fp2">Firing Point 2</option>
+          <option value="fp3">Firing Point 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Time</label>
+        <select id="time" required>
+          <option value="">-- Select Time --</option>
+          <option value="forenoon">Forenoon</option>
+          <option value="afternoon">Afternoon</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="save"><i class="fas fa-save"></i> Save</button>
+        <button type="reset" class="reset"><i class="fas fa-eraser"></i> Reset</button>
+        <button type="button" class="update"><i class="fas fa-edit"></i> Update</button>
+        <button type="button" class="delete"><i class="fas fa-trash-alt"></i> Delete</button>
+        <a href="show.html" class="report"><i class="fas fa-file-alt"></i> Show Report</a>
+      </div>
+    </form>
+  </section>
+  <script>
+  const form = document.querySelector("form");
+  const saveBtn = document.querySelector(".save");
+  const updateBtn = document.querySelector(".update");
+  const deleteBtn = document.querySelector(".delete");
+
+  let selectedIndex = localStorage.getItem("selectedIndex") || -1;
+  let reports = JSON.parse(localStorage.getItem("firingReports")) || [];
+
+  function getFormData() {
+    return {
+      employee: document.getElementById("employee").value,
+      weapon: document.getElementById("weapon").value,
+      date: document.getElementById("date").value,
+      firingPoint: document.getElementById("firing-point").value,
+      time: document.getElementById("time").value
+    };
+  }
+
+  function fillForm(data) {
+    document.getElementById("employee").value = data.employee;
+    document.getElementById("weapon").value = data.weapon;
+    document.getElementById("date").value = data.date;
+    document.getElementById("firing-point").value = data.firingPoint;
+    document.getElementById("time").value = data.time;
+  }
+
+  function saveToLocal() {
+    localStorage.setItem("firingReports", JSON.stringify(reports));
+  }
+
+  saveBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const newData = getFormData();
+    if (Object.values(newData).some(val => val === "")) {
+      alert("Please fill all fields.");
+      return;
+    }
+    reports.push(newData);
+    saveToLocal();
+    alert("Record Saved.");
+    form.reset();
+  });
+
+  updateBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (selectedIndex == -1 || !reports[selectedIndex]) {
+      alert("No record selected to update.");
+      return;
+    }
+    reports[selectedIndex] = getFormData();
+    saveToLocal();
+    alert("Record Updated.");
+    localStorage.removeItem("selectedIndex");
+    form.reset();
+  });
+
+  deleteBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (selectedIndex == -1 || !reports[selectedIndex]) {
+      alert("No record selected to delete.");
+      return;
+    }
+    reports.splice(selectedIndex, 1);
+    saveToLocal();
+    alert("Record Deleted.");
+    localStorage.removeItem("selectedIndex");
+    form.reset();
+  });
+
+  // Load selected record if exists
+  if (selectedIndex != -1 && reports[selectedIndex]) {
+    fillForm(reports[selectedIndex]);
+  }
+</script>
+
+
+  <footer>
+    <p>&copy;  All Rights Reserved Ap@04</p>
+  </footer>
+
+</body>
+</html>
+

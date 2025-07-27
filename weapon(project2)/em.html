@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PXE Employees | Weapons Detailment System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+
+    header, footer {
+      background-color: #1e293b;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .middle-header {
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 15px 0;
+    }
+
+    .bottom-header a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .bottom-header a:hover {
+      color: #38bdf8;
+    }
+
+    .employee-section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .employee-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #38bdf8;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #1e293b;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #38bdf8;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+      color: #fbbf24;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    footer p {
+      margin: 10px 0;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="upper-header">
+      <div>
+        <a href="https://www.google.com" target="_blank"><i class="fas fa-search"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="middle-header">Weapons Detailment System</div>
+    <div class="bottom-header">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="we.html"><i class="fas fa-crosshairs"></i> Weapons</a>
+      <a href="em.html"><i class="fas fa-users"></i> PXE Employees</a>
+      <a href="d.html"><i class="fas fa-box"></i> Detailment</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+  </header>
+
+  <!-- Leadership Section -->
+  <section class="employee-section">
+    <h2>Leadership</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="assets/images/dream.jpg" alt="Director">
+        <h3>Dr. A. K. Mehta</h3>
+        <p><strong>Director</strong><br>Leading PXE with strategic direction and advanced defense research vision.</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/dream.jpg" alt="Associate Director">
+        <h3>Ms. R. S. Nair</h3>
+        <p><strong>Associate Director</strong><br>Supporting project coordination and R&D implementation across units.</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/dream.jpg" alt="Additional Director">
+        <h3>Mr. T. K. Rao</h3>
+        <p><strong>Additional Director</strong><br>Oversees technological integration and operational logistics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imaging Wing -->
+  <section class="employee-section">
+    <h2>Imaging Wing</h2>
+    <div class="card-container">
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>Dr. R. Tripathy</h3><p>Wing Head</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>A. Joshi</h3><p>Satellite Imaging Expert</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>K. Das</h3><p>Thermal Scan Analyst</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>M. Sharma</h3><p>Infrared Systems Specialist</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>N. Reddy</h3><p>AI Vision Integrator</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>R. Kumar</h3><p>Drone Feed Analyst</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>P. Ghosh</h3><p>Remote Sensing Technician</p></div>
+    </div>
+  </section>
+
+  <!-- Weapons Wing -->
+  <section class="employee-section">
+    <h2>Weapons Wing</h2>
+    <div class="card-container">
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>Lt. Cdr. P. Banerjee</h3><p>Wing Head</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>S. Mahapatra</h3><p>Ballistics Engineer</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>R. Singh</h3><p>Explosives Expert</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>D. Nayak</h3><p>Weapons Simulation Analyst</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>K. Jain</h3><p>Guidance & Targeting Specialist</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>H. Patel</h3><p>Missile Assembly Technician</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>A. Das</h3><p>Structural Analyst</p></div>
+    </div>
+  </section>
+<!-- R&S Wing -->
+  <section class="employee-section">
+    <h2>R&S Wing</h2>
+    <div class="card-container">
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>Dr. R. Tripathy</h3><p>Wing Head</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>A. Joshi</h3><p>Satellite Imaging Expert</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>K. Das</h3><p>Thermal Scan Analyst</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>M. Sharma</h3><p>Infrared Systems Specialist</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>N. Reddy</h3><p>AI Vision Integrator</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>R. Kumar</h3><p>Drone Feed Analyst</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>P. Ghosh</h3><p>Remote Sensing Technician</p></div>
+    </div>
+  </section>
+  <!-- Imaging Wing -->
+  <section class="employee-section">
+    <h2>Communication Wing</h2>
+    <div class="card-container">
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>Dr. R. Tripathy</h3><p>Wing Head</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>A. Joshi</h3><p>Satellite Imaging Expert</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>K. Das</h3><p>Thermal Scan Analyst</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>M. Sharma</h3><p>Infrared Systems Specialist</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>N. Reddy</h3><p>AI Vision Integrator</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>R. Kumar</h3><p>Drone Feed Analyst</p></div>
+      <div class="card"><img src="assets/images/dream.jpg" alt=""><h3>P. Ghosh</h3><p>Remote Sensing Technician</p></div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; All Rights Reserved to Ap@04.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
